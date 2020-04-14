@@ -73,7 +73,7 @@ DATABASES = {
 
     'PASSWORD': 'user',
 
-    'HOST': 'localhost',
+    'HOST': 'veggiestreet.herokuapp.com',
 
     'PORT': '5432',
 
