@@ -5,7 +5,7 @@ ENVIRONMENT = os.getenv('ENVIRONMENT', 'development')
 DEBUG = True # mono gia to developement OTAN tha to kanw deploy tha to svhse
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '-05sgp9!deq=q1nltm@^^2cc+v29i(tyybv3v2t77qi66czazj'
-ALLOWED_HOSTS = ['veggiestreet.herokuapp.com']
+ALLOWED_HOSTS = ['veggiestreet.herokuapp.com','127.0.0.1']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -59,9 +59,24 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, 'db.sqlite3')
+    # "default": {
+    #     "ENGINE": "django.db.backends.sqlite3",
+    #     "NAME": os.path.join(BASE_DIR, 'db.sqlite3')
+    # }
+    'default': {
+
+    'ENGINE': 'django.db.backends.postgresql_psycopg2',
+
+    'NAME': 'magaziDB',
+
+    'USER': 'postgres',
+
+    'PASSWORD': 'user',
+
+    'HOST': 'localhost',
+
+    'PORT': '5432',
+
     }
 }
 
