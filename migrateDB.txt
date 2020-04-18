@@ -17,3 +17,16 @@ python3 manage.py loaddata datadump.json
 
 epeita 
 heroku run python manage.py migrate gia na anevoun oi allages sto db tou heroku
+
+gia na douleuoun ta static sto heroku django app:
+prepei na trexei to heroku to collectstatic gia na to trexei prepei na exw orisei sto settings to STATIC_ROOT
+alla autos o fakelos tha prepei na uparxei sto github alliws den trexei...kai prepei na exei periexomeno alliws
+den anevenei sto github. Epeiseis prepei na egatastisw to whitenoise.
+
+gia na douleeui to db prepei:
+na kanw ena db app sto heroku
+na kanw migrate to local postgre sto heroku postgres
+na to sundesw vazontas "db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)" sto settings
+TA PERIEXOMENA THS LOCAL DB DEN ANEVENOUN ME MIGRATE
+
