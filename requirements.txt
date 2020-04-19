@@ -10,4 +10,4 @@ pycodestyle==2.5.0
 pytz==2018.5
 sqlparse==0.2.4
 whitenoise==5.0.1
-django-cors-headers=3.2.1
+django-cors-headers==3.2.1
