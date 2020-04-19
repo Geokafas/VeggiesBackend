@@ -1,5 +1,6 @@
 import os
 import dj_database_url
+from corsheaders.defaults import default_methods
 
 ENVIRONMENT = os.getenv('ENVIRONMENT', 'development')
 
@@ -20,10 +21,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core',
     'rest_framework',
+    'corsheaders',
     #'whitenoise.runserver_nostatic',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -87,6 +91,25 @@ DATABASES = {
 
     }
 }
+
+#https://pypi.org/project/django-cors-headers/
+CORS_ORIGIN_WHITELIST = [
+    "https://veggiestreetfrontend.herokuapp.com",
+    "http://localhost:3000",
+    "http://127.0.0.1:3000"
+]
+
+#Default methods:
+# CORS_ALLOW_METHODS = [
+#     'DELETE',
+#     'GET',
+#     'OPTIONS',
+#     'PATCH',
+#     'POST',
+#     'PUT',
+# ]
+
+CORS_ALLOW_METHODS = list(default_methods) #+ ['POKE',]
 
 db_from_env = dj_database_url.config(conn_max_age=600)
 DATABASES['default'].update(db_from_env)
