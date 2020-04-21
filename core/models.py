@@ -3,12 +3,15 @@ from django.conf import settings
 
 #frouta/products
 class Item(models.Model):
+    CHOICES = [(1, 'ΦΡΟΥΤΑ'),(2, 'ΛΑΧΑΝΙΚΑ'),(3,'VEGGIESTREET')]
+
     product_title = models.CharField(max_length=100)
     product_price = models.FloatField()
     product_id = models.IntegerField(primary_key=True)
     product_picture = models.ImageField(upload_to = 'items/', default = 'no-img.jpg')
     product_description = models.TextField(max_length = 300, blank = True, help_text = "Dwse mia perigrafi tou proiontos")
     product_quantity = models.IntegerField(default=1)
+    product_category = models.IntegerField(choices=CHOICES, default=1)
     def __str__(self):
         return self.product_title
 
