@@ -8,6 +8,7 @@ class ItemResource(resources.ModelResource):
         model = Item
         skip_unchanged = True
         report_skipped = False
+        import_id_fields = ('product_id',)
         exclude = ('product_picture')
         #fields = ('product_title','product_price','product_quantity','product_category')
         #export_order = ('id', 'price', 'author', 'name')
