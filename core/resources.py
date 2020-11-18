@@ -1,4 +1,5 @@
 # this module is responsible for importing and exporting products from/to files.
+#django-import-export-2.4.0 is the library
 from import_export import resources
 from .models import Item
 
@@ -10,5 +11,3 @@ class ItemResource(resources.ModelResource):
         report_skipped = False
         import_id_fields = ('product_id',)
         exclude = ('product_picture')
-        #fields = ('product_title','product_price','product_quantity','product_category')
-        #export_order = ('id', 'price', 'author', 'name')
