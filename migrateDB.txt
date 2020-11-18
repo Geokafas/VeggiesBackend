@@ -28,5 +28,5 @@ na kanw ena db app sto heroku
 na kanw migrate to local postgre sto heroku postgres
 na to sundesw vazontas "db_from_env = dj_database_url.config(conn_max_age=600)
 DATABASES['default'].update(db_from_env)" sto settings
-TA PERIEXOMENA THS LOCAL DB DEN ANEVENOUN ME MIGRATE
+TA PERIEXOMENA THS LOCAL DB DEN ANEVENOUN ME MIGRATE MONO OI ALLAGES STO MODELO
 

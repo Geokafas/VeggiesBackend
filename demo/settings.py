@@ -22,6 +22,7 @@ INSTALLED_APPS = [
     'core',
     'rest_framework',
     'corsheaders',
+    'import_export',
     #'whitenoise.runserver_nostatic',
 ]
 
@@ -82,7 +83,7 @@ DATABASES = {
 
     'USER': 'postgres',
 
-    'PASSWORD': 'user',
+    'PASSWORD': 'postgres',
 
     'HOST': 'localhost',
 
