@@ -1,3 +1,5 @@
+#renames the project stracture
+#command: python manage.py <current project name> <new project name>
 import os
 from django.core.management.base import BaseCommand
 
